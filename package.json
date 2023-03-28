@@ -1,0 +1,12 @@
+{
+  "name": "taolj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pnpm -r run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

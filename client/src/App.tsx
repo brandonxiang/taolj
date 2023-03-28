@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './App.css'
 import {Image, List} from 'antd-mobile'
-import {gql, useQuery} from '@apollo/client'
+import {useQuery} from 'urql'
 
 const users = [
   {
@@ -37,19 +37,20 @@ interface Item {
 }
 
 function App() {
-  const {loading, error, data} = useQuery<{items: Item[]}>(
-    gql`
-      {
-        items(page: 1, pageSize: 1) {
-          id
-          name
-          url
-        }
+  const [result] = useQuery<{items: Item[]}>({
+    query: `query {
+      items(page: 1, pageSize: 1) {
+        id
+        name
+        url
       }
-    `
-  )
+    }
+  `
+  })
 
-  if (loading) return <p>Loading...</p>
+  const {fetching, error, data} = result;
+
+  if (fetching) return <p>Loading...</p>
   if (error) return <p>Error : {error.message}</p>
 
   return (

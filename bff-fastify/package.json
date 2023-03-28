@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "genfromproto": "grpc_tools_node_protoc --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./src/gen-code  --ts_proto_opt=outputServices=nice-grpc,outputServices=generic-definitions,useExactTypes=false,esModuleInterop=true --proto_path=../proto item.proto order.proto",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "fastify": "^4.12.0",
+    "@apollo/server": "^4.3.1",
+    "graphql": "^16.6.0",
+    "tsx": "^3.12.2",
+    "@as-integrations/fastify": "^1.3.0",
+    "ts-proto": "^1.138.0",
+    "protobufjs": "^7.2.0",
+    "@grpc/grpc-js": "^1.0.0",
+    "nice-grpc": "^2.1.0",
+    "long": "^5.2.1",
+    "grpc-tools": "^1.12.3",
+    "nice-grpc-common": "^2.0.1"
+  }
+}

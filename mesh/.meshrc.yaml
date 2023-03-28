@@ -1,0 +1,9 @@
+sources:
+  - name: order
+    handler:
+      grpc:
+        endpoint: localhost:9002
+        source: /Users/brandonxiang/github/taolj/proto/order.proto
+    transforms:
+      - namingConvention:
+          fieldNames: camelCase

@@ -9,4 +9,7 @@ export default defineConfig({
       '/graphql': 'http://localhost:9000',
     },
   },
+  build: {
+    sourcemap: true
+  }
 })

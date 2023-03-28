@@ -1,0 +1,7 @@
+packages:
+  - 'bff'
+  - 'client'
+  - 'for-debug'
+  - 'item-server'
+  - 'mesh'
+  - 'bff-fastify'
